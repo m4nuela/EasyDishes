@@ -44,4 +44,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Row \(indexPath.row) selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 }

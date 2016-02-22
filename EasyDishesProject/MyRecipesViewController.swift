@@ -19,11 +19,11 @@ class MyRecipesViewController: UIViewController, UITableViewDataSource, UITableV
         
         
         let nib = UINib(nibName: "myCell", bundle: nil);
-        tableView.registerNib(nib, forCellReuseIdentifier: "myRecipes");
+        tableView.registerNib(nib, forCellReuseIdentifier: "MyRecipes");
         
         
         let nib2 = UINib(nibName: "myCell2", bundle: nil);
-        tableView.registerNib(nib2, forCellReuseIdentifier: "myRecipes2");
+        tableView.registerNib(nib2, forCellReuseIdentifier: "MyRecipes2");
         
     }
     
@@ -40,21 +40,34 @@ class MyRecipesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell1 :myCellTableViewCell
-        var cell2 :myCell2TableViewCell
+      
+        
         if(indexPath.row%2==0){
-            cell1 = tableView.dequeueReusableCellWithIdentifier("MyRecipes", forIndexPath: indexPath) as! myCellTableViewCell
-            cell1.textLabel?.text = favoriteRecipes[indexPath.row];
-            return cell1;
-        }else{
-            cell2 = tableView.dequeueReusableCellWithIdentifier("MyRecipes2", forIndexPath: indexPath) as! myCell2TableViewCell
+        let cell1 :myCellTableViewCell;
+        cell1 = tableView.dequeueReusableCellWithIdentifier("MyRecipes", forIndexPath: indexPath) as! myCellTableViewCell
+        cell1.label?.text = favoriteRecipes[indexPath.row];
+        cell1.img.image = UIImage(named:"image.png");
+           
+        return cell1;
             
-            cell2.textLabel?.text = favoriteRecipes[indexPath.row];
+            //cell.imgCarName.image = UIImage(named: tableData[indexPath.row])
+
+        
+        }else{
+            let cell2 :myCell2TableViewCell
+            cell2 = tableView.dequeueReusableCellWithIdentifier("MyRecipes2", forIndexPath: indexPath) as! myCell2TableViewCell
+            cell2.label?.text = favoriteRecipes[indexPath.row];
+            cell2.img.image = UIImage(named:"image");
             return cell2;
         }
-        
+            //return cell;
         
     
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Row \(indexPath.row) selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 

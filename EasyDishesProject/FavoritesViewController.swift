@@ -50,6 +50,11 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Row \(indexPath.row) selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 //    override func tableView(tableView: UITableView,
 //        didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //            let title = "Wine List"

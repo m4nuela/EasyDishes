@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyRecipes" rowHeight="60" id="0ge-u3-yN9" userLabel="MyRecipes2" customClass="myCell2TableViewCell" customModule="EasyDishesProject" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyRecipes2" rowHeight="60" id="0ge-u3-yN9" userLabel="MyRecipes2" customClass="myCell2TableViewCell" customModule="EasyDishesProject" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ge-u3-yN9" id="AKj-Sl-Sbr">
@@ -22,8 +22,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGm-bR-MNn">
-                        <rect key="frame" x="105" y="19" width="42" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="86" y="19.5" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -38,18 +38,18 @@
                     <constraint firstItem="NKZ-MX-69w" firstAttribute="leading" secondItem="AKj-Sl-Sbr" secondAttribute="leadingMargin" constant="13" id="FgN-rw-JXR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4AZ-Eb-0dM" secondAttribute="trailing" constant="25" id="GB3-W2-oM8"/>
                     <constraint firstItem="NKZ-MX-69w" firstAttribute="centerY" secondItem="AKj-Sl-Sbr" secondAttribute="centerY" id="L5B-Ph-VpX"/>
-                    <constraint firstItem="FGm-bR-MNn" firstAttribute="leading" secondItem="NKZ-MX-69w" secondAttribute="trailing" constant="34" id="icQ-PX-lY8"/>
+                    <constraint firstItem="FGm-bR-MNn" firstAttribute="leading" secondItem="NKZ-MX-69w" secondAttribute="trailing" constant="15" id="icQ-PX-lY8"/>
                     <constraint firstItem="4AZ-Eb-0dM" firstAttribute="centerY" secondItem="AKj-Sl-Sbr" secondAttribute="centerY" id="kqI-MB-h7m"/>
                     <constraint firstItem="NKZ-MX-69w" firstAttribute="top" secondItem="AKj-Sl-Sbr" secondAttribute="topMargin" constant="-3" id="ozY-Zw-S0r"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.97838408574381719" green="1" blue="0.74499676560032513" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.86107896679999996" blue="0.79131593040000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="delete" destination="4AZ-Eb-0dM" id="uCI-GT-DLI"/>
                 <outlet property="img" destination="NKZ-MX-69w" id="fgy-kh-HY9"/>
                 <outlet property="label" destination="FGm-bR-MNn" id="tr8-HR-2YQ"/>
             </connections>
-            <point key="canvasLocation" x="426" y="149"/>
+            <point key="canvasLocation" x="406" y="273"/>
         </tableViewCell>
     </objects>
     <resources>
