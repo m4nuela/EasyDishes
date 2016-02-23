@@ -32,7 +32,7 @@
                         <state key="normal" image="delete"/>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.86107896679999996" blue="0.79131593040000003" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="FGm-bR-MNn" firstAttribute="centerY" secondItem="AKj-Sl-Sbr" secondAttribute="centerY" id="1ik-FZ-VXK"/>
                     <constraint firstItem="NKZ-MX-69w" firstAttribute="leading" secondItem="AKj-Sl-Sbr" secondAttribute="leadingMargin" constant="13" id="FgN-rw-JXR"/>
