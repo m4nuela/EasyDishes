@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                         self.performSegueWithIdentifier("fromLoginToHome", sender: self)
                     }else{
                         let title = "Error"
-                        let message = "The Email or Password are wrong."
+                        let message = "The Email or Password fields are wrong."
                         let alertController = UIAlertController(
                             title: title, message: message,
                             preferredStyle: .Alert)

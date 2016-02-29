@@ -60,7 +60,7 @@ class CreateAccountViewController: UIViewController {
         userObject["email"] = txtEmail.text
         userObject["username"] = txtUsername.text
         userObject["password"] = txtPassword.text
-        userObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        userObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in self.performSegueWithIdentifier("fromCreateAccountToHome", sender: self)
             
             if(success){
                 title = "Success"
@@ -82,6 +82,10 @@ class CreateAccountViewController: UIViewController {
             
         }
     }
+    @IBAction func dissmissCreateAccount(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func onDismissTextField(sender: UITextField) {
         sender.resignFirstResponder()
     }
@@ -101,6 +105,7 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         txtEmail.placeholder = "Email"
         txtUsername.placeholder = "Username"
         txtPassword.placeholder = "Password"
