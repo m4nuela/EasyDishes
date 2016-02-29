@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -506,11 +506,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Srq-er-2tg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="hpv-vA-pSq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="hpv-vA-pSq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ds2-lr-dRa">
                                 <rect key="frame" x="555" y="9" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Plus Math-52"/>
+                                <state key="normal" image="Add to Favorites-51"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -910,7 +910,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="HsT-eo-1W8" kind="show" id="RfU-jw-LVt"/>
                                 </connections>
@@ -947,25 +947,25 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Favorites" id="ysQ-VG-zzJ">
-                        <barButtonItem key="leftBarButtonItem" image="recipe" id="PNV-rJ-KQ6">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="recipe" id="r4J-pa-2f9">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="aVK-Et-dS0">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="skv-ea-itc">
+                            <barButtonItem title="Item" style="plain" id="T6i-lm-5gP">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DUm-qj-FRo">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Plus Math-52"/>
+                                    <state key="normal" image="Plus Math-53"/>
                                     <connections>
-                                        <segue destination="DNM-Yt-oBG" kind="show" id="9qK-Ai-zz6"/>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="B6q-rp-END"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="T6i-lm-5gP">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DUm-qj-FRo">
+                            <barButtonItem title="Item" style="plain" id="wIj-5k-eRp">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pnK-hB-1cg">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Search Filled-50"/>
+                                    <state key="normal" image="Search Filled-51"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1029,7 +1029,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="HsT-eo-1W8" kind="show" id="uq5-vV-1qK"/>
                                 </connections>
@@ -1042,17 +1042,17 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Recipes" id="Lym-oq-jy3">
-                        <barButtonItem key="leftBarButtonItem" image="recipe" id="pbF-EY-Ykf">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="recipe" id="BM6-KI-Qtq">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="EUf-3U-Ynu">
+                            <barButtonItem title="Item" style="plain" id="EUf-3U-Ynu">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NMt-5i-Qja">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Plus Math-52"/>
+                                    <state key="normal" image="Plus Math-53"/>
                                     <connections>
-                                        <segue destination="DNM-Yt-oBG" kind="show" id="yFF-LT-Wh1"/>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="QcH-tv-B5s"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -1060,7 +1060,7 @@
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sg5-eo-8FR">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Search Filled-50"/>
+                                    <state key="normal" image="Search Filled-51"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1124,7 +1124,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="HsT-eo-1W8" kind="show" id="vyT-dP-4eT"/>
                                 </connections>
@@ -1137,25 +1137,25 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Easy Dishes" id="eaB-vy-EL4">
-                        <barButtonItem key="leftBarButtonItem" image="recipe" style="plain" id="mcD-U7-yHZ">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="recipe" id="KLo-cs-KcZ">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="3hH-qJ-mgY">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CUa-yH-Faa">
+                            <barButtonItem title="Item" style="plain" id="4Kw-Af-E91">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pKS-38-hWG">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Plus Math-52"/>
+                                    <state key="normal" image="Plus Math-53"/>
                                     <connections>
-                                        <segue destination="DNM-Yt-oBG" kind="show" id="22a-9C-oSM"/>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="eKF-yF-F0G"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="4Kw-Af-E91">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pKS-38-hWG">
+                            <barButtonItem style="plain" id="Ll0-Ym-U2x">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mwt-UI-Axy">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="Search Filled-50"/>
+                                    <state key="normal" image="Search Filled-51"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1249,9 +1249,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add to Favorites-51" width="50" height="50"/>
         <image name="Home" width="25" height="25"/>
-        <image name="Plus Math-52" width="52" height="52"/>
-        <image name="Search Filled-50" width="50" height="50"/>
+        <image name="Plus Math-53" width="52" height="52"/>
+        <image name="Search Filled-51" width="50" height="50"/>
         <image name="food2" width="512" height="512"/>
         <image name="food3" width="512" height="512"/>
         <image name="image" width="50" height="50"/>
@@ -1259,8 +1260,8 @@
         <image name="recipe" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YfQ-SI-pUx"/>
+        <segue reference="QcH-tv-B5s"/>
         <segue reference="7yF-tT-UBn"/>
-        <segue reference="9qK-Ai-zz6"/>
+        <segue reference="uq5-vV-1qK"/>
     </inferredMetricsTieBreakers>
 </document>
