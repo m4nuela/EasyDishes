@@ -18,13 +18,12 @@ class MyRecipesTableViewController: UITableViewController {
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        
-        let nib = UINib(nibName: "myCell", bundle: nil);
-        tableView.registerNib(nib, forCellReuseIdentifier: "MyRecipes");
-        
-        
-        let nib2 = UINib(nibName: "myCell2", bundle: nil);
-        tableView.registerNib(nib2, forCellReuseIdentifier: "MyRecipes2");
+//        let nib = UINib(nibName: "myCell", bundle: nil);
+//        tableView.registerNib(nib, forCellReuseIdentifier: "MyRecipes");
+//        
+//        
+//        let nib2 = UINib(nibName: "myCell2", bundle: nil);
+//        tableView.registerNib(nib2, forCellReuseIdentifier: "MyRecipes2");
         
     }
     
@@ -43,25 +42,43 @@ class MyRecipesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
+//        if(indexPath.row%2==0){
+//            let cell1 :myCellTableViewCell;
+//            cell1 = tableView.dequeueReusableCellWithIdentifier("MyRecipes", forIndexPath: indexPath) as! myCellTableViewCell
+//            cell1.label?.text = favoriteRecipes[indexPath.row];
+//            cell1.img.image = UIImage(named:"image.png");
+//            
+//            return cell1;
+//            
+//            //cell.imgCarName.image = UIImage(named: tableData[indexPath.row])
+//            
+//            
+//        }else{
+//            let cell2 :myCell2TableViewCell
+//            cell2 = tableView.dequeueReusableCellWithIdentifier("MyRecipes2", forIndexPath: indexPath) as! myCell2TableViewCell
+//            cell2.label?.text = favoriteRecipes[indexPath.row];
+//            cell2.img.image = UIImage(named:"image");
+//            return cell2;
+//        }
+        
+        
+        
+        var cell :UITableViewCell;
         if(indexPath.row%2==0){
-            let cell1 :myCellTableViewCell;
-            cell1 = tableView.dequeueReusableCellWithIdentifier("MyRecipes", forIndexPath: indexPath) as! myCellTableViewCell
-            cell1.label?.text = favoriteRecipes[indexPath.row];
-            cell1.img.image = UIImage(named:"image.png");
-            
-            return cell1;
-            
-            //cell.imgCarName.image = UIImage(named: tableData[indexPath.row])
-            
-            
+            cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) as UITableViewCell
         }else{
-            let cell2 :myCell2TableViewCell
-            cell2 = tableView.dequeueReusableCellWithIdentifier("MyRecipes2", forIndexPath: indexPath) as! myCell2TableViewCell
-            cell2.label?.text = favoriteRecipes[indexPath.row];
-            cell2.img.image = UIImage(named:"image");
-            return cell2;
+            cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
-        //return cell;
+        
+        
+        
+        
+        cell.textLabel?.text = favoriteRecipes[indexPath.row]
+        
+        return cell
+
+        
+        
         
         
     }

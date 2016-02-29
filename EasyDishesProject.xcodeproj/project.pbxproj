@@ -17,6 +17,8 @@
 		6C71D7991C7A252D005F266A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C71D7971C7A252D005F266A /* LaunchScreen.storyboard */; };
 		6C71D7A41C7A252D005F266A /* EasyDishesProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71D7A31C7A252D005F266A /* EasyDishesProjectTests.swift */; };
 		6C71D7AF1C7A252D005F266A /* EasyDishesProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71D7AE1C7A252D005F266A /* EasyDishesProjectUITests.swift */; };
+		6CF3A6EA1C83E283008923CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF3A6E81C83E283008923CF /* Bolts.framework */; };
+		6CF3A6EB1C83E283008923CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF3A6E91C83E283008923CF /* Parse.framework */; };
 		D901D19F1C83BE32006DB73B /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D901D19C1C83BE32006DB73B /* HomeTableViewController.swift */; };
 		D901D1A01C83BE32006DB73B /* MyRecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D901D19D1C83BE32006DB73B /* MyRecipesTableViewController.swift */; };
 		D901D1A11C83BE32006DB73B /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D901D19E1C83BE32006DB73B /* FavoritesTableViewController.swift */; };
@@ -25,8 +27,6 @@
 		D915FA521C83831B0060AE8D /* RecipeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915FA511C83831B0060AE8D /* RecipeImageTableViewCell.swift */; };
 		D915FA541C83AFA50060AE8D /* cookAndServeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915FA531C83AFA50060AE8D /* cookAndServeCell.xib */; };
 		D915FA561C83AFDC0060AE8D /* cookAndServeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915FA551C83AFDC0060AE8D /* cookAndServeTableViewCell.swift */; };
-		D9C8E3041C7B801500D063AA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E2F81C7B801500D063AA /* Parse.framework */; };
-		D9C8E3051C7B801500D063AA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E2F91C7B801500D063AA /* Bolts.framework */; };
 		D9C8E3061C7B801500D063AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E2FA1C7B801500D063AA /* CoreLocation.framework */; };
 		D9C8E3071C7B801500D063AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E2FB1C7B801500D063AA /* QuartzCore.framework */; };
 		D9C8E3081C7B801500D063AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E2FC1C7B801500D063AA /* Security.framework */; };
@@ -76,6 +76,8 @@
 		6C71D7AA1C7A252D005F266A /* EasyDishesProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyDishesProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C71D7AE1C7A252D005F266A /* EasyDishesProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyDishesProjectUITests.swift; sourceTree = "<group>"; };
 		6C71D7B01C7A252D005F266A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CF3A6E81C83E283008923CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = EasyDishesProject/Bolts.framework; sourceTree = SOURCE_ROOT; };
+		6CF3A6E91C83E283008923CF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = EasyDishesProject/Parse.framework; sourceTree = SOURCE_ROOT; };
 		D901D19C1C83BE32006DB73B /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		D901D19D1C83BE32006DB73B /* MyRecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecipesTableViewController.swift; sourceTree = "<group>"; };
 		D901D19E1C83BE32006DB73B /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		D915FA511C83831B0060AE8D /* RecipeImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageTableViewCell.swift; sourceTree = "<group>"; };
 		D915FA531C83AFA50060AE8D /* cookAndServeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cookAndServeCell.xib; sourceTree = "<group>"; };
 		D915FA551C83AFDC0060AE8D /* cookAndServeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cookAndServeTableViewCell.swift; sourceTree = "<group>"; };
-		D9C8E2F81C7B801500D063AA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		D9C8E2F91C7B801500D063AA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D9C8E2FA1C7B801500D063AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		D9C8E2FB1C7B801500D063AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		D9C8E2FC1C7B801500D063AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -106,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF3A6EA1C83E283008923CF /* Bolts.framework in Frameworks */,
+				6CF3A6EB1C83E283008923CF /* Parse.framework in Frameworks */,
 				D9C8E3071C7B801500D063AA /* QuartzCore.framework in Frameworks */,
 				D9C8E30B1C7B801500D063AA /* libz.tbd in Frameworks */,
 				D9C8E30A1C7B801500D063AA /* SystemConfiguration.framework in Frameworks */,
@@ -115,8 +117,6 @@
 				D9C8E3081C7B801500D063AA /* Security.framework in Frameworks */,
 				D9C8E3061C7B801500D063AA /* CoreLocation.framework in Frameworks */,
 				D9C8E3091C7B801500D063AA /* StoreKit.framework in Frameworks */,
-				D9C8E3041C7B801500D063AA /* Parse.framework in Frameworks */,
-				D9C8E3051C7B801500D063AA /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +207,8 @@
 		D9C8E3031C7B801500D063AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9C8E2F81C7B801500D063AA /* Parse.framework */,
-				D9C8E2F91C7B801500D063AA /* Bolts.framework */,
+				6CF3A6E81C83E283008923CF /* Bolts.framework */,
+				6CF3A6E91C83E283008923CF /* Parse.framework */,
 				D9C8E2FA1C7B801500D063AA /* CoreLocation.framework */,
 				D9C8E2FB1C7B801500D063AA /* QuartzCore.framework */,
 				D9C8E2FC1C7B801500D063AA /* Security.framework */,
@@ -515,6 +515,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)_Nicolas",
+					"$(PROJECT_DIR)/EasyDishesProject",
 				);
 				INFOPLIST_FILE = EasyDishesProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,6 +531,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)_Nicolas",
+					"$(PROJECT_DIR)/EasyDishesProject",
 				);
 				INFOPLIST_FILE = EasyDishesProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
