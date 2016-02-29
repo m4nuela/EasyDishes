@@ -67,8 +67,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0y-uJ-QJ6">
-                                                    <rect key="frame" x="150" y="256" width="60" height="30"/>
-                                                    <state key="normal" title="Clear list"/>
+                                                    <rect key="frame" x="150" y="256" width="36" height="30"/>
+                                                    <state key="normal" title="Clear"/>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=". Item one" translatesAutoresizingMaskIntoConstraints="NO" id="EwC-Vz-sfj">
                                                     <rect key="frame" x="150" y="13" width="301" height="243"/>
@@ -104,7 +104,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="0Qp-De-R08"/>
                                                         <constraint firstAttribute="width" constant="150" id="xXS-yc-oyS"/>
                                                     </constraints>
-                                                    <state key="normal" title="Add instructions &gt;">
+                                                    <state key="normal" title="Add Instructions &gt;">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -322,7 +322,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="FA0-ny-T9p">
-                                            <rect key="frame" x="180" y="18" width="240" height="240"/>
+                                            <rect key="frame" x="180" y="8" width="240" height="240"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="240" id="VpW-aw-GjS"/>
                                                 <constraint firstAttribute="width" constant="240" id="XE9-i7-go3"/>
@@ -330,7 +330,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="FA0-ny-T9p" firstAttribute="top" secondItem="4e2-jJ-U31" secondAttribute="topMargin" constant="10" id="0yD-4L-Y3j"/>
+                                        <constraint firstItem="FA0-ny-T9p" firstAttribute="top" secondItem="4e2-jJ-U31" secondAttribute="topMargin" id="0yD-4L-Y3j"/>
                                         <constraint firstItem="FA0-ny-T9p" firstAttribute="centerX" secondItem="4e2-jJ-U31" secondAttribute="centerX" id="2L1-pM-R66"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -384,20 +384,20 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Fd-qVc">
-                                            <rect key="frame" x="167" y="8" width="49" height="33.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COOK:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Fd-qVc">
+                                            <rect key="frame" x="168" y="8" width="47.5" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serve:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-gG-UAT">
-                                            <rect key="frame" x="317" y="8" width="48.5" height="33.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-gG-UAT">
+                                            <rect key="frame" x="317" y="8" width="50.5" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#portions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ0-72-mdw">
-                                            <rect key="frame" x="374" y="8" width="74" height="33.5"/>
+                                            <rect key="frame" x="375.5" y="8" width="74" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -504,6 +504,16 @@
                             <outlet property="delegate" destination="HsT-eo-1W8" id="glA-dm-GdD"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Srq-er-2tg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hpv-vA-pSq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ds2-lr-dRa">
+                                <rect key="frame" x="555" y="9" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plus Math-52"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edq-Qh-ei6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -809,8 +819,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKU-mB-ojY">
-                                                    <rect key="frame" x="150" y="256" width="60" height="30"/>
-                                                    <state key="normal" title="Clear list"/>
+                                                    <rect key="frame" x="150" y="256" width="36" height="30"/>
+                                                    <state key="normal" title="Clear"/>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1 Step one" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Vd-8L0">
                                                     <rect key="frame" x="150" y="13" width="301" height="243"/>
@@ -941,18 +951,21 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="eph-SY-gYp">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BB4-LB-bSC">
+                            <barButtonItem style="plain" id="aVK-Et-dS0">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="skv-ea-itc">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="plus"/>
+                                    <state key="normal" image="Plus Math-52"/>
+                                    <connections>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="9qK-Ai-zz6"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem style="plain" id="T6i-lm-5gP">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DUm-qj-FRo">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="search"/>
+                                    <state key="normal" image="Search Filled-50"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1033,18 +1046,21 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="ihy-jP-yyr">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l3z-D7-aVQ">
-                                    <rect key="frame" x="555" y="9" width="25" height="25"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="plus"/>
-                                </button>
-                            </barButtonItem>
                             <barButtonItem style="plain" id="EUf-3U-Ynu">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NMt-5i-Qja">
+                                    <rect key="frame" x="555" y="9" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="Plus Math-52"/>
+                                    <connections>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="yFF-LT-Wh1"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="cWW-M6-uqw">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sg5-eo-8FR">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="search"/>
+                                    <state key="normal" image="Search Filled-50"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1125,13 +1141,13 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="Nri-KO-CVF">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ajm-cu-cQf">
+                            <barButtonItem style="plain" id="3hH-qJ-mgY">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CUa-yH-Faa">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="plus"/>
+                                    <state key="normal" image="Plus Math-52"/>
                                     <connections>
-                                        <segue destination="DNM-Yt-oBG" kind="show" id="EMP-mz-VrI"/>
+                                        <segue destination="DNM-Yt-oBG" kind="show" id="22a-9C-oSM"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -1139,7 +1155,7 @@
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pKS-38-hWG">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="search"/>
+                                    <state key="normal" image="Search Filled-50"/>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1161,6 +1177,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="drd-Uq-NqZ">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Lue-CE-KuO" kind="relationship" relationship="rootViewController" id="OO1-6S-DA5"/>
                     </connections>
@@ -1230,16 +1250,17 @@
     </scenes>
     <resources>
         <image name="Home" width="25" height="25"/>
+        <image name="Plus Math-52" width="52" height="52"/>
+        <image name="Search Filled-50" width="50" height="50"/>
         <image name="food2" width="512" height="512"/>
         <image name="food3" width="512" height="512"/>
         <image name="image" width="50" height="50"/>
         <image name="myRecipes" width="25" height="25"/>
-        <image name="plus" width="25" height="25"/>
         <image name="recipe" width="40" height="40"/>
-        <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z58-fI-m8W"/>
+        <segue reference="YfQ-SI-pUx"/>
         <segue reference="7yF-tT-UBn"/>
+        <segue reference="9qK-Ai-zz6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,10 @@ class MyRecipesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
+        navigationController!.navigationBar.barTintColor = UIColor.orangeColor().colorWithAlphaComponent(0.25)
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         
         let nib = UINib(nibName: "myCell", bundle: nil);
         tableView.registerNib(nib, forCellReuseIdentifier: "MyRecipes");

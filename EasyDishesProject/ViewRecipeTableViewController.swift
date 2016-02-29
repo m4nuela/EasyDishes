@@ -105,9 +105,11 @@ class ViewRecipeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(indexPath.row == 0){
-            return 280
-        }else{
+            return 250
+        }else if (indexPath.row == 3){
             return 50
+        }else{
+            return 40
         }
     }
     
