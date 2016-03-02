@@ -56,31 +56,36 @@ class CreateAccountViewController: UIViewController {
             return
         }
     
-        let userObject = PFObject(className: "User")
-        userObject["email"] = txtEmail.text
-        userObject["username"] = txtUsername.text
-        userObject["password"] = txtPassword.text
-        userObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in self.performSegueWithIdentifier("fromCreateAccountToHome", sender: self)
+        let user = PFUser()
+        user.password = txtPassword.text
+        user.email = txtEmail.text
+        user["username"] = txtUsername.text
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo["error"] as? String
+                title = "Error"
+                message = "Your Account has not been created! " + errorString!
             
-            if(success){
+            }else {
                 title = "Success"
                 message = "Your Account has been created!"
-            }else{
-                title = "Error"
-                message = "Your Account has not been created!"
             }
-            
+        
             let alertController = UIAlertController(
                 title: title, message: message,
                 preferredStyle: .Alert)
+        
             let okayAction = UIAlertAction(title: "Okay", style: .Default) { _ in
                 self.dismissViewControllerAnimated(true, completion: nil)
-
             }
+            
             alertController.addAction(okayAction)
             self.presentViewController(alertController, animated: true, completion: nil)
-            
+        
         }
+        
     }
     @IBAction func dissmissCreateAccount(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

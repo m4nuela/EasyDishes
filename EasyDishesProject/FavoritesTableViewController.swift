@@ -15,7 +15,9 @@ class FavoritesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        navigationController!.navigationBar.barTintColor = UIColor.orangeColor().colorWithAlphaComponent(0.25)
+        navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
@@ -43,9 +45,6 @@ class FavoritesTableViewController: UITableViewController {
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
-        
-        
-        
         
         cell.textLabel?.text = favoriteRecipes[indexPath.row]
         

@@ -1,26 +1,84 @@
 //
-//  TestandoTableViewController.swift
+//  NewRecipeTableViewController.swift
 //  EasyDishesProject
 //
-//  Created by Nicolas Oliveira Gomes do Nascimento on 2/27/16.
+//  Created by Nicolas Oliveira Gomes do Nascimento on 2/29/16.
 //  Copyright © 2016 Manuela Barbosa. All rights reserved.
 //
 
 import UIKit
+import Parse
 
-class TestandoTableViewController: UITableViewController {
+var name = ""
+var time = ""
+var portions = ""
+
+class NewRecipeTableViewController: UITableViewController {
+
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var imgPhoto: UIImageView!
+    @IBOutlet weak var txtTime: UITextField!
+    @IBOutlet weak var txtPortions: UITextField!
+    
+    
+    @IBAction func onCreateRecipe(sender: UIButton) {
+        
+        let recipeObject = PFObject(className: "Recipe")
+        recipeObject["name"] = txtName.text
+        
+        let image = UIImage(named: "chocolate_cookies")
+        let data = UIImagePNGRepresentation(image!)
+        let file = PFFile(name: "image", data: data!)
+        recipeObject["img"] = file
+        
+        recipeObject["time"] = txtTime.text
+        recipeObject["portions"] = txtPortions.text
+        recipeObject["ingredients"] = globalIngredients
+        recipeObject["instructions"] = globalInstruction
+        
+        recipeObject["userId"] = userId
+        
+        recipeObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            
+            let title:String
+            let message:String
+            
+            if(success){
+                title = "Success"
+                message = "Your Recipe has been created!"
+            }else{
+                title = "Error"
+                message = "Your Recipe has not been created!"
+            }
+            
+            let alertController = UIAlertController(
+                title: title, message: message,
+                preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default) { _ in
+                self.performSegueWithIdentifier("fromNewRecipeToMyRecipes", sender: self)
+            }
+            alertController.addAction(okayAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue,   sender: AnyObject?) {
+        /*if let target = segue.destinationViewController as?  AddIngredientsTableViewController {
+            target.ingredients = ingredients
+        }*/
+        
+        name = txtName.text!
+        time = txtTime.text!
+        portions = txtPortions.text!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navigationBar = navigationController!.navigationBar
-        navigationBar.tintColor = UIColor.blueColor()
-        
-        let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        let rightButton = UIBarButtonItem(title: "Right Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        
-        navigationItem.leftBarButtonItem = leftButton
-        navigationItem.rightBarButtonItem = rightButton
+        txtName.text = name
+        txtTime.text = time
+        txtPortions.text = portions
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,12 +95,13 @@ class TestandoTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 6
+        
     }
 
     /*

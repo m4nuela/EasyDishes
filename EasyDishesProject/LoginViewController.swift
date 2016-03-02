@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+var userId:String?
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
@@ -31,8 +33,28 @@ class LoginViewController: UIViewController {
             
             return
         }
-
         
+        PFUser.logInWithUsernameInBackground(txtEmail.text!, password:txtPassword.text!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                userId = user?.username
+                self.performSegueWithIdentifier("fromLoginToHome", sender: self)
+            } else {
+                
+                let title = "Error"
+                let message = error!.userInfo["error"] as? String
+                let alertController = UIAlertController(
+                    title: title, message: message,
+                    preferredStyle: .Alert)
+                let okayAction = UIAlertAction(title: "Okay",
+                    style: .Default, handler: nil)
+                alertController.addAction(okayAction)
+                self.presentViewController(alertController,
+                    animated: true, completion: nil)
+            }
+        }
+        
+        /*
         let query = PFQuery(className:"User")
         query.whereKey("email", equalTo:txtEmail.text!)
         query.whereKey("password", equalTo:txtPassword.text!)
@@ -57,8 +79,19 @@ class LoginViewController: UIViewController {
                         
                     }
                 }
+            }else{
+                var message = "Something happened =("
+                let title = "Error"
+                let alertController = UIAlertController(
+                    title: title, message: message,
+                    preferredStyle: .Alert)
+                let okayAction = UIAlertAction(title: "Okay",
+                    style: .Default, handler: nil)
+                alertController.addAction(okayAction)
+                self.presentViewController(alertController,
+                    animated: true, completion: nil)
             }
-        }
+        }*/
     }
     
     @IBAction func dismissTextField(sender: UITextField) {
