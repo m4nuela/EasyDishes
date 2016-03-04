@@ -7,10 +7,36 @@
 //
 
 import UIKit
+import Parse
 
-let favoriteRecipes = ["Coxinha","Brigadeiro","Pastel","Cachorro Quente", "Bolo de rolo","Pudim","Coxinha","Brigadeiro","Pastel","Cachorro Quente", "Bolo de rolo","Pudim","Coxinha","Brigadeiro","Pastel","Cachorro Quente", "Bolo de rolo","Pudim","Coxinha","Brigadeiro","Pastel","Cachorro Quente", "Bolo de rolo","Pudim"];
 
 class FavoritesTableViewController: UITableViewController {
+    
+    var favoriteRecipes : [PFObject] = [];
+    var favoriteRecipesIds : [String] = [];
+    
+    func getFavoriteRecipes(){
+        let currentUser = PFUser.currentUser();
+        favoriteRecipesIds = currentUser!["favorites"] as! [String]
+        let query = PFQuery(className:"Recipe")
+        query.whereKey("objectId",containedIn: favoriteRecipesIds)
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error:NSError?) -> Void in
+            if error == nil{
+                self.favoriteRecipes = objects!;
+                print(objects!.count)
+                self.tableView.reloadData()
+                print(userId!)
+            }
+        }
+
+        
+    }
+
+    
+    override func viewWillAppear(animated: Bool) {
+        getFavoriteRecipes();
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -46,7 +72,19 @@ class FavoritesTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
         
-        cell.textLabel?.text = favoriteRecipes[indexPath.row]
+        cell.textLabel?.text = favoriteRecipes[indexPath.row]["name"] as? String;
+        
+        if let image = favoriteRecipes[indexPath.row]["img"] as? PFFile{
+            image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    cell.imageView?.image = UIImage(data:imageData!)
+                }else{
+                    cell.imageView?.image = UIImage(named: "image");
+                }
+                tableView.reloadData();
+            }
+        }
+
         
         return cell
     }

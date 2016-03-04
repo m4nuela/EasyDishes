@@ -7,12 +7,35 @@
 //
 
 import UIKit
+import Parse
 
 class MyRecipesTableViewController: UITableViewController {
 
+    var myRecipesList : [PFObject] = [];
+    
+    func getMyRecipes(){
+        let query = PFQuery(className:"Recipe")
+        query.whereKey("userId",equalTo:userId!)
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error:NSError?) -> Void in
+            if error == nil{
+                self.myRecipesList = objects!;
+                self.tableView.reloadData()
+                print(userId!)
+            }
+        }
+    }
+
+    
+    override func viewWillAppear(animated: Bool) {
+        getMyRecipes();
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
+        self.view.addGestureRecognizer(longPressRecognizer)
         
         navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         
@@ -38,7 +61,7 @@ class MyRecipesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteRecipes.count
+        return myRecipesList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,7 +98,19 @@ class MyRecipesTableViewController: UITableViewController {
         
         
         
-        cell.textLabel?.text = favoriteRecipes[indexPath.row]
+        cell.textLabel?.text = myRecipesList[indexPath.row]["name"] as? String
+        
+        if let image = myRecipesList[indexPath.row]["img"] as? PFFile{
+            image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    cell.imageView?.image = UIImage(data:imageData!)
+                }else{
+                    cell.imageView?.image = UIImage(named: "image");
+                }
+                tableView.reloadData();
+            }
+        }
+
         
         return cell
 
@@ -88,6 +123,33 @@ class MyRecipesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Row \(indexPath.row) selected")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    
+    func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.Began {
+            
+            let touchPoint = longPressGestureRecognizer.locationInView(self.view)
+            if let indexPath = tableView.indexPathForRowAtPoint(touchPoint) {
+                
+                let alertController = UIAlertController(title: "Delete", message: "Do you really want to delete this recipe?", preferredStyle: .Alert);
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:nil);
+                let forceAction = UIAlertAction(title: "Yes", style: .Destructive){ _ in
+                    
+                    //remover do parse
+                    self.myRecipesList[indexPath.row].deleteInBackground()
+                    self.getMyRecipes()
+                }
+                    
+                    alertController.addAction(cancelAction);
+                    alertController.addAction(forceAction);
+                    
+                    
+                    presentViewController(alertController, animated: true,completion: nil);
+            }
+        }
     }
 
     

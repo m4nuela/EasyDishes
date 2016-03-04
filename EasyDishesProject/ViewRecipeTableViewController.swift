@@ -24,9 +24,11 @@ class ViewRecipeTableViewController: UITableViewController {
     var ingredientsList = [String]()
     var instructionsList = [String]()
     var foodImage:UIImage?
+    var isFavorite = false
+    
+    @IBOutlet weak var btnFavorite: UIButton!
     
     @IBAction func onFavRecipe(sender: UIButton) {
-       
         let query = PFUser.query()
         query!.whereKey("username", equalTo: PFUser.currentUser()!.username!)
         query!.getFirstObjectInBackgroundWithBlock {
@@ -35,12 +37,31 @@ class ViewRecipeTableViewController: UITableViewController {
                 print(error)
             } else if let user = object {
                 var oldFavorites:[String] = user["favorites"] as! [String]
-                oldFavorites.append(self.recipeId)
-                user["favorites"] = oldFavorites
-                user.saveInBackground()
-                
-                let title = "Sucess"
-                let message = "The recipe has been favorited!"
+                var title = ""
+                var message = ""
+                if(self.isFavorite){
+                    let index = oldFavorites.indexOf(self.recipeId)
+                    oldFavorites.removeAtIndex(index!)
+                    user["favorites"] = oldFavorites
+                    user.saveInBackground()
+                    
+                    self.isFavorite = false
+                    self.updateFavoriteIcon()
+
+                    title = "Sucess"
+                    message = "The recipe has been removed!"
+                    
+                }else{
+                    oldFavorites.append(self.recipeId)
+                    user["favorites"] = oldFavorites
+                    user.saveInBackground()
+                    
+                    self.isFavorite = true
+                    self.updateFavoriteIcon()
+                    
+                    title = "Sucess"
+                    message = "The recipe has been favorited!"
+                }
                 let alertController = UIAlertController(
                     title: title, message: message,
                     preferredStyle: .Alert)
@@ -49,7 +70,6 @@ class ViewRecipeTableViewController: UITableViewController {
                 alertController.addAction(okayAction)
                 self.presentViewController(alertController,
                     animated: true, completion: nil)
-                
             }
         }
     }
@@ -64,7 +84,6 @@ class ViewRecipeTableViewController: UITableViewController {
                 print(error)
             } else if let recipe = recipe {
                 self.recipe = recipe
-                self.authorId = recipe["userId"] as! String
                 self.ingredientsList = recipe["ingredients"] as! [String]
                 self.instructionsList = recipe["instructions"] as! [String]
                 if let image = recipe["img"] as? PFFile{
@@ -75,17 +94,36 @@ class ViewRecipeTableViewController: UITableViewController {
                         }
                     }
                 }
+                self.authorId = recipe["userId"] as! String
                 do{
                     try self.userAuthor = PFQuery.getUserObjectWithId(self.authorId)
                 }catch _ {}
             }
         }
         
+        let currentUser = PFUser.currentUser()
+        self.isFavorite = (currentUser!["favorites"] as! [String]).contains(self.recipeId)
+      
         let nib = UINib(nibName: "recipeImageCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "imageCell")
         
         let nib2 = UINib(nibName: "cookAndServeCell", bundle: nil)
         tableView.registerNib(nib2, forCellReuseIdentifier: "cookAndServeCell")
+        
+        tableView.allowsSelection = false;
+    }
+    
+    func updateFavoriteIcon(){
+        
+        var imageName = ""
+        if(self.isFavorite){
+            imageName = "Add to Favorites-Full"
+        }else{
+            imageName = "Add to Favorites-51"
+        }
+        var image = UIImage(named: imageName)
+        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        self.btnFavorite.imageView!.image = image
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,6 +146,8 @@ class ViewRecipeTableViewController: UITableViewController {
             return cell
         }
     
+        updateFavoriteIcon()
+
         switch(indexPath.row){
         case 0:
             

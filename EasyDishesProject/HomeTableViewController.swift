@@ -7,12 +7,36 @@
 //
 
 import UIKit
+import Parse
 
 
 class HomeTableViewController: UITableViewController {
+    
+    var recipesList : [PFObject] = [];
+    
+    func getRecipes(){
+        let query = PFQuery(className:"Recipe")
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error:NSError?) -> Void in
+            if error == nil{
+                self.recipesList = objects!;
+                self.tableView.reloadData()
+                print(userId!)
+            }
+        }
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        getRecipes();
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        
+        
+        
         
         navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         
@@ -20,7 +44,7 @@ class HomeTableViewController: UITableViewController {
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
-    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
@@ -31,7 +55,8 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteRecipes.count
+        
+        return recipesList.count
     }
     
 override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -41,12 +66,27 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
-        
-        
-        
-        
-        cell.textLabel?.text = favoriteRecipes[indexPath.row]
-        
+    
+    
+//    let image = UIImage(named: "chocolate_cookies")
+//    let data = UIImagePNGRepresentation(image!)
+//    let file = PFFile(name: "image", data: data!)
+//    recipeObject["img"] = file
+    
+    
+        cell.textLabel?.text = recipesList[indexPath.row]["name"] as? String
+        if let image = recipesList[indexPath.row]["img"] as? PFFile{
+            image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    cell.imageView?.image = UIImage(data:imageData!)
+                }else{
+                    cell.imageView?.image = UIImage(named: "image");
+                }
+                tableView.reloadData();
+            }
+        }
+    
+    
         return cell
     }
     
