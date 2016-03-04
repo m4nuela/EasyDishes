@@ -90,7 +90,9 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Row \(indexPath.row) selected")
+        //print("Row \(indexPath.row) selected")
+        globalRecipeId = favoriteRecipes[indexPath.row]["objectId"] as! String
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 

@@ -110,18 +110,14 @@ class MyRecipesTableViewController: UITableViewController {
                 tableView.reloadData();
             }
         }
-
         
         return cell
-
-        
-        
-        
-        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Row \(indexPath.row) selected")
+        //print("Row \(indexPath.row) selected")
+        globalRecipeId = myRecipesList[indexPath.row]["objectId"] as! String
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -151,6 +147,4 @@ class MyRecipesTableViewController: UITableViewController {
             }
         }
     }
-
-    
 }

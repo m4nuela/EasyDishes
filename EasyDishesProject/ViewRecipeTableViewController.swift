@@ -17,7 +17,6 @@ var cookiesInstructions = ["1 - Beat butter and sugar till light and fluffy. Add
 
 class ViewRecipeTableViewController: UITableViewController {
     
-    var recipeId = "9kfA00UXiX"
     var recipe:PFObject?
     var userAuthor:PFUser?
     var authorId:String = ""
@@ -30,7 +29,7 @@ class ViewRecipeTableViewController: UITableViewController {
     
     @IBAction func onFavRecipe(sender: UIButton) {
         let query = PFUser.query()
-        query!.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        query!.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
         query!.getFirstObjectInBackgroundWithBlock {
             (object: PFObject?, error: NSError?) -> Void in
             if (error != nil) {
@@ -40,7 +39,7 @@ class ViewRecipeTableViewController: UITableViewController {
                 var title = ""
                 var message = ""
                 if(self.isFavorite){
-                    let index = oldFavorites.indexOf(self.recipeId)
+                    let index = oldFavorites.indexOf(globalRecipeId)
                     oldFavorites.removeAtIndex(index!)
                     user["favorites"] = oldFavorites
                     user.saveInBackground()
@@ -52,7 +51,7 @@ class ViewRecipeTableViewController: UITableViewController {
                     message = "The recipe has been removed!"
                     
                 }else{
-                    oldFavorites.append(self.recipeId)
+                    oldFavorites.append(globalRecipeId)
                     user["favorites"] = oldFavorites
                     user.saveInBackground()
                     
@@ -78,7 +77,7 @@ class ViewRecipeTableViewController: UITableViewController {
         super.viewDidLoad()
     
         let query = PFQuery(className:"Recipe")
-        query.getObjectInBackgroundWithId(recipeId) {
+        query.getObjectInBackgroundWithId(globalRecipeId) {
             (recipe: PFObject?, error: NSError?) -> Void in
             if (error != nil && recipe == nil) {
                 print(error)
@@ -102,7 +101,7 @@ class ViewRecipeTableViewController: UITableViewController {
         }
         
         let currentUser = PFUser.currentUser()
-        self.isFavorite = (currentUser!["favorites"] as! [String]).contains(self.recipeId)
+        self.isFavorite = (currentUser!["favorites"] as! [String]).contains(globalRecipeId)
       
         let nib = UINib(nibName: "recipeImageCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "imageCell")

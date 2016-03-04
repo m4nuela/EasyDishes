@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+var globalRecipeId = ""
 
 class HomeTableViewController: UITableViewController {
     
@@ -26,18 +27,13 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
-    
     override func viewWillAppear(animated: Bool) {
         getRecipes();
     }
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        
-        
-        
-        
-        
+    
         navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
@@ -55,7 +51,6 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return recipesList.count
     }
     
@@ -93,6 +88,10 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Row \(indexPath.row) selected")
+        if(recipesList.count != 0){
+            globalRecipeId = recipesList[indexPath.row].objectId!
+        }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
