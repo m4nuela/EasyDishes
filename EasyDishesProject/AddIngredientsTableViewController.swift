@@ -31,7 +31,12 @@ class AddIngredientsTableViewController: UITableViewController {
             from.ingredients = ingredients
     
         }*/
-        self.performSegueWithIdentifier("fromIngredientsToNewRecipe", sender: self)
+        //self.performSegueWithIdentifier("fromIngredientsToNewRecipe", sender: self)
+        
+       // dismissViewControllerAnimated(true, completion: nil)
+        
+        navigationController!.popViewControllerAnimated(true)
+        
     }
     
     override func viewDidLoad() {

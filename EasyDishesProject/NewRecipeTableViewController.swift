@@ -100,7 +100,10 @@ class NewRecipeTableViewController: UITableViewController {
                 title: title, message: message,
                 preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default) { _ in
-                self.performSegueWithIdentifier("fromNewRecipeToMyRecipes", sender: self)
+//                self.performSegueWithIdentifier("fromNewRecipeToMyRecipes", sender: self)
+                
+                self.navigationController!.popViewControllerAnimated(true)
+
             }
             alertController.addAction(okayAction)
             self.presentViewController(alertController, animated: true, completion: nil)
@@ -119,6 +122,7 @@ class NewRecipeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         txtName.text = globalName
         txtTime.text = globalTime
