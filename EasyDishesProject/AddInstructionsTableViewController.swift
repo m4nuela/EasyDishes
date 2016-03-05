@@ -33,10 +33,7 @@ class AddInstructionsTableViewController: UITableViewController {
         if let from = presentingViewController as? AddInstructionsTableViewController {
             from.instructions = instructions
         }*/
-//        self.performSegueWithIdentifier("fromInstructionsToNewRecipe", sender: self)
-        
-        navigationController!.popViewControllerAnimated(true)
-
+        self.performSegueWithIdentifier("fromInstructionsToNewRecipe", sender: self)
     }
     
     override func viewDidLoad() {
