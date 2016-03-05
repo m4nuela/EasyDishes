@@ -116,8 +116,9 @@ class MyRecipesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //print("Row \(indexPath.row) selected")
-        globalRecipeId = myRecipesList[indexPath.row]["objectId"] as! String
-        
+        if(myRecipesList.count != 0){
+            globalRecipeId = myRecipesList[indexPath.row].objectId!
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

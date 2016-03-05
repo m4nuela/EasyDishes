@@ -91,8 +91,9 @@ class FavoritesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //print("Row \(indexPath.row) selected")
-        globalRecipeId = favoriteRecipes[indexPath.row]["objectId"] as! String
-        
+        if(favoriteRecipes.count != 0){
+            globalRecipeId = favoriteRecipes[indexPath.row].objectId!
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
