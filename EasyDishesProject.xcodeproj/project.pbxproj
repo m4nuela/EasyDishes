@@ -40,6 +40,7 @@
 		D9C8E30E1C7B801500D063AA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C8E3021C7B801500D063AA /* AudioToolbox.framework */; };
 		D9C8E3111C7B80EF00D063AA /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8E30F1C7B80EF00D063AA /* CreateAccountViewController.swift */; };
 		D9C8E3121C7B80EF00D063AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8E3101C7B80EF00D063AA /* LoginViewController.swift */; };
+		D9FA53681C8BB97B000B729D /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA53671C8BB97B000B729D /* ImagePreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		D9C8E3021C7B801500D063AA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		D9C8E30F1C7B80EF00D063AA /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D9C8E3101C7B80EF00D063AA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D9FA53671C8BB97B000B729D /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				6C71D78C1C7A252D005F266A /* AppDelegate.swift */,
 				D915FA511C83831B0060AE8D /* RecipeImageTableViewCell.swift */,
 				6C71D7921C7A252D005F266A /* Main.storyboard */,
+				D9FA53671C8BB97B000B729D /* ImagePreviewViewController.swift */,
 				D915FA531C83AFA50060AE8D /* cookAndServeCell.xib */,
 				D915FA551C83AFDC0060AE8D /* cookAndServeTableViewCell.swift */,
 				D915FA4D1C8376E20060AE8D /* ViewRecipeTableViewController.swift */,
@@ -370,6 +373,7 @@
 				6C01F0931C7ABC7700BD5760 /* myCellTableViewCell.swift in Sources */,
 				D915FA4E1C8376E20060AE8D /* ViewRecipeTableViewController.swift in Sources */,
 				D915FA561C83AFDC0060AE8D /* cookAndServeTableViewCell.swift in Sources */,
+				D9FA53681C8BB97B000B729D /* ImagePreviewViewController.swift in Sources */,
 				D915FA521C83831B0060AE8D /* RecipeImageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

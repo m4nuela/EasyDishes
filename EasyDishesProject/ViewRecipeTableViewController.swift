@@ -15,6 +15,8 @@ var cookiesIngredients = [". 1 cup of softened butter", ". 1 cup of brown sugar"
 var cookiesInstructions = ["1 - Beat butter and sugar till light and fluffy. Add in the eggs one at a time. Add vanilla.", "2 - Whisk together flour, baking powder and baking soda. Fold this mixture into the wet mixture. The dough will be very stiff. Add in the chocolate chips and fold.", "3 - Take a scoop of batter and roll into a ball. Flatten a little and place on baking sheet lined with parchment paper. Place the balls at a distance from each other. Bake and flatten the cookies a little if they inflate while baking.", "4 - Let them cool and enjoy."]
 */
 
+var globalImagePreview = UIImage()
+
 class ViewRecipeTableViewController: UITableViewController {
     
     var recipe:PFObject?
@@ -137,6 +139,11 @@ class ViewRecipeTableViewController: UITableViewController {
         return 6 + ingredientsList.count + instructionsList.count
     }
     
+    func imageTapped(img: AnyObject)
+    {
+       performSegueWithIdentifier("fromViewRecipeToImagePreview",sender: self)
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = UITableViewCell()
@@ -153,6 +160,14 @@ class ViewRecipeTableViewController: UITableViewController {
             let cellImg:RecipeImageTableViewCell
             cellImg = tableView.dequeueReusableCellWithIdentifier("imageCell", forIndexPath: indexPath) as! RecipeImageTableViewCell
             cellImg.img.image = foodImage
+        
+            let imageView = cellImg.img
+            let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+            imageView.userInteractionEnabled = true
+            imageView.addGestureRecognizer(tapGestureRecognizer)
+
+            globalImagePreview = foodImage!
+            
             return cellImg
         
         case 1:

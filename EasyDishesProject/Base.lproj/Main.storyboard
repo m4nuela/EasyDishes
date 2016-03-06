@@ -143,6 +143,49 @@
             </objects>
             <point key="canvasLocation" x="5415" y="532"/>
         </scene>
+        <!--Image Preview View Controller-->
+        <scene sceneID="hcj-l8-6kL">
+            <objects>
+                <viewController id="Gab-VM-TaT" customClass="ImagePreviewViewController" customModule="EasyDishesProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ptS-IQ-qSb"/>
+                        <viewControllerLayoutGuide type="bottom" id="oUH-Ew-0vW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nbg-oE-wMp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-OV-OMH">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Zqy-15-jHA"/>
+                                    <constraint firstAttribute="width" constant="300" id="qUa-QY-fpF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xSr-wO-KBT" appends="YES" id="9qI-f5-pQj"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rcg-OV-OMH" firstAttribute="centerY" secondItem="nbg-oE-wMp" secondAttribute="centerY" id="9p2-dK-VIz"/>
+                            <constraint firstItem="Rcg-OV-OMH" firstAttribute="centerX" secondItem="nbg-oE-wMp" secondAttribute="centerX" id="yvC-3d-c7S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgPhoto" destination="Rcg-OV-OMH" id="oXr-Dc-pnK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-pl-hwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="xSr-wO-KBT">
+                    <connections>
+                        <action selector="pinchRecognizer:" destination="Gab-VM-TaT" id="Gl3-y0-JGB"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="5394" y="1303"/>
+        </scene>
         <!--New Recipe-->
         <scene sceneID="KhR-a4-yw3">
             <objects>
@@ -192,9 +235,6 @@
                                                         <constraint firstAttribute="height" constant="150" id="0Po-Mf-Lsx"/>
                                                         <constraint firstAttribute="width" constant="150" id="Mpa-74-a4X"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="RKg-ri-Qpe" appends="YES" id="BQG-ye-EFK"/>
-                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -391,11 +431,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bE4-VL-xu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="RKg-ri-Qpe">
-                    <connections>
-                        <action selector="pinchedDetected:" destination="DNM-Yt-oBG" id="3WV-2k-NuC"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4600" y="532"/>
         </scene>
@@ -616,6 +651,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnFavorite" destination="ds2-lr-dRa" id="9jI-Sz-hJo"/>
+                        <segue destination="Gab-VM-TaT" kind="show" identifier="fromViewRecipeToImagePreview" id="1wb-HL-9wm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edq-Qh-ei6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1416,7 +1452,7 @@
         <image name="recipe" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fsv-lN-jsY"/>
+        <segue reference="hEg-Yk-BmD"/>
         <segue reference="uq5-vV-1qK"/>
     </inferredMetricsTieBreakers>
 </document>
