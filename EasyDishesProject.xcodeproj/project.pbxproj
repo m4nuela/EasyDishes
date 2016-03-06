@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C01F0911C7ABABD00BD5760 /* myCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C01F0901C7ABABC00BD5760 /* myCell.xib */; };
 		6C01F0931C7ABC7700BD5760 /* myCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01F0921C7ABC7700BD5760 /* myCellTableViewCell.swift */; };
-		6C01F0951C7ABEFC00BD5760 /* myCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C01F0941C7ABEFC00BD5760 /* myCell2.xib */; };
 		6C01F0971C7AC01200BD5760 /* myCell2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01F0961C7AC01200BD5760 /* myCell2TableViewCell.swift */; };
 		6C71D78D1C7A252D005F266A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71D78C1C7A252D005F266A /* AppDelegate.swift */; };
 		6C71D7941C7A252D005F266A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C71D7921C7A252D005F266A /* Main.storyboard */; };
@@ -62,9 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C01F0901C7ABABC00BD5760 /* myCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = myCell.xib; path = ../myCell.xib; sourceTree = "<group>"; };
 		6C01F0921C7ABC7700BD5760 /* myCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCellTableViewCell.swift; sourceTree = "<group>"; };
-		6C01F0941C7ABEFC00BD5760 /* myCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myCell2.xib; sourceTree = "<group>"; };
 		6C01F0961C7AC01200BD5760 /* myCell2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCell2TableViewCell.swift; sourceTree = "<group>"; };
 		6C71D7891C7A252D005F266A /* EasyDishesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyDishesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C71D78C1C7A252D005F266A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,11 +166,9 @@
 				D9C8E30F1C7B80EF00D063AA /* CreateAccountViewController.swift */,
 				D9C8E3101C7B80EF00D063AA /* LoginViewController.swift */,
 				D9110EDC1C84EE7C000011D0 /* AddIngredientsTableViewController.swift */,
-				6C01F0901C7ABABC00BD5760 /* myCell.xib */,
 				D91A22991C8A402800C4B161 /* FavoritesTableViewController.swift */,
 				D91A229A1C8A402800C4B161 /* HomeTableViewController.swift */,
 				D91A229B1C8A402800C4B161 /* MyRecipesTableViewController.swift */,
-				6C01F0941C7ABEFC00BD5760 /* myCell2.xib */,
 				6C01F0961C7AC01200BD5760 /* myCell2TableViewCell.swift */,
 				6C01F0921C7ABC7700BD5760 /* myCellTableViewCell.swift */,
 				D915FA4F1C83829D0060AE8D /* recipeImageCell.xib */,
@@ -334,8 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C71D7991C7A252D005F266A /* LaunchScreen.storyboard in Resources */,
-				6C01F0911C7ABABD00BD5760 /* myCell.xib in Resources */,
-				6C01F0951C7ABEFC00BD5760 /* myCell2.xib in Resources */,
 				D915FA501C83829D0060AE8D /* recipeImageCell.xib in Resources */,
 				D915FA541C83AFA50060AE8D /* cookAndServeCell.xib in Resources */,
 				6C71D7961C7A252D005F266A /* Assets.xcassets in Resources */,

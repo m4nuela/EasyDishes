@@ -15,11 +15,18 @@ var globalPortions = ""
 var globalImagePhoto = UIImage(named: "chocolate_cookies");
 
 class NewRecipeTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @IBAction func pinchedDetected(sender: UIPinchGestureRecognizer) {
+        print("pinched!!!!")
+        imgPhoto.transform = CGAffineTransformScale(imgPhoto.transform, sender.scale, sender.scale)
+        
+    }
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var txtTime: UITextField!
     @IBOutlet weak var txtPortions: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imagePicker = UIImagePickerController()
     
@@ -78,6 +85,9 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         
         recipeObject["userId"] = userId
         
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+        
         recipeObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
             let title:String
@@ -108,6 +118,9 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
             alertController.addAction(okayAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+        
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue,   sender: AnyObject?) {
@@ -119,6 +132,8 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.hidden = true
         
         txtName.text = globalName
         txtTime.text = globalTime
