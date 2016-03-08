@@ -21,7 +21,7 @@ class MyRecipesTableViewController: UITableViewController {
             if error == nil{
                 self.myRecipesList = objects!;
                 self.tableView.reloadData()
-                print(userId!)
+                //print(userId!)
             }
         }
     }

@@ -24,6 +24,7 @@ class AddIngredientsTableViewController: UITableViewController {
     @IBAction func onAddIngredient(sender: UIButton) {
         globalIngredients.append(txtNewIngredient.text!)
         txtIngredientsList.text = txtIngredientsList.text + ". " + globalIngredients.last! + "\n"
+            txtNewIngredient.text = ""
     }
     
     @IBAction func onSaveIngredientsList(sender: UIButton) {

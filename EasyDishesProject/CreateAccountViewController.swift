@@ -60,6 +60,7 @@ class CreateAccountViewController: UIViewController {
         user.password = txtPassword.text
         user.email = txtEmail.text
         user["username"] = txtUsername.text
+        user["favorites"] = []
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -77,8 +78,16 @@ class CreateAccountViewController: UIViewController {
                 title: title, message: message,
                 preferredStyle: .Alert)
         
-            let okayAction = UIAlertAction(title: "Okay", style: .Default) { _ in
-                self.dismissViewControllerAnimated(true, completion: nil)
+            var okayAction :UIAlertAction
+            if (title == "Success"){
+                okayAction = UIAlertAction(title: "Okay",style: .Default) { _ in
+                    
+                     userId = self.txtUsername.text!
+                        self.performSegueWithIdentifier("fromCreateAccountToHome", sender: self)
+                }
+            }else{
+                okayAction = UIAlertAction(title: "Okay", style: .Default, handler:nil)
+                
             }
             
             alertController.addAction(okayAction)

@@ -21,6 +21,7 @@ class AddInstructionsTableViewController: UITableViewController {
         globalInstructions.append(txtNewInstruction.text!)
         
         txtInstructionList.text = txtInstructionList.text + "\(globalInstructions.count)" + ". " + txtNewInstruction.text! + "\n"
+            txtNewInstruction.text = ""
     }
     
     @IBAction func onClearInstructionsList(sender: UIButton) {

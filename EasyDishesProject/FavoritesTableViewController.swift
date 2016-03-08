@@ -24,9 +24,9 @@ class FavoritesTableViewController: UITableViewController {
             (objects: [PFObject]?, error:NSError?) -> Void in
             if error == nil{
                 self.favoriteRecipes = objects!;
-                print(objects!.count)
+                //print(objects!.count)
                 self.tableView.reloadData()
-                print(userId!)
+                //print(userId!)
             }
         }
 

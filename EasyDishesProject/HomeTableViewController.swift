@@ -22,7 +22,7 @@ class HomeTableViewController: UITableViewController {
             if error == nil{
                 self.recipesList = objects!;
                 self.tableView.reloadData()
-                print(userId!)
+                //print(userId!)
             }
         }
     }

@@ -75,6 +75,20 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         
         let image = imgPhoto.image
         let data = UIImagePNGRepresentation(image!)
+        //print(data?.length)
+        if (data?.length > 10000000){
+            title = "Error"
+            let message = "The Image size cannot be larger than 10MB"
+            
+            let alertController = UIAlertController(
+                title: title, message: message,
+                preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler:nil)
+            alertController.addAction(okayAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            
         let file = PFFile(name: txtName.text, data: data!)
         recipeObject["img"] = file
         
@@ -121,6 +135,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue,   sender: AnyObject?) {
