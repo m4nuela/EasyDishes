@@ -95,6 +95,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         recipeObject["time"] = txtTime.text
         recipeObject["portions"] = txtPortions.text
         recipeObject["ingredients"] = globalIngredients
+        recipeObject["ingredientsString"] = globalIngredientsString
         recipeObject["instructions"] = globalInstructions
         
         recipeObject["userId"] = userId
@@ -114,6 +115,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
                 globalName = ""
                 globalTime = ""
                 globalPortions = ""
+                globalIngredientsString = ""
                 globalIngredients = [String]()
                 globalInstructions = [String]()
                 globalImagePhoto = UIImage(named: "chocolate_cookies");

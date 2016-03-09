@@ -139,6 +139,8 @@ class MyRecipesTableViewController: UITableViewController {
                     //remover do parse
                     self.myRecipesList[indexPath.row].deleteInBackground()
                     self.getMyRecipes()
+                    self.tableView.reloadData()
+
                 }
                     
                     alertController.addAction(cancelAction);

@@ -9,6 +9,7 @@
 import UIKit
 
 var globalIngredients = [String]()
+var globalIngredientsString :String = ""
 
 class AddIngredientsTableViewController: UITableViewController {
 
@@ -18,6 +19,7 @@ class AddIngredientsTableViewController: UITableViewController {
     
     @IBAction func onClearList(sender: UIButton) {
         txtIngredientsList.text = ""
+        globalIngredientsString = ""
         globalIngredients = [String]()
     }
     
@@ -25,6 +27,7 @@ class AddIngredientsTableViewController: UITableViewController {
         if (txtNewIngredient.text! != ""){
             globalIngredients.append(txtNewIngredient.text!)
             txtIngredientsList.text = txtIngredientsList.text + ". " + globalIngredients.last! + "\n"
+            globalIngredientsString = globalIngredientsString + globalIngredients.last! + " "
             txtNewIngredient.text = ""
         }
     }

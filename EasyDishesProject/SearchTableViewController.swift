@@ -21,6 +21,7 @@ class SearchTableViewController: UITableViewController {
     @IBAction func searchRecipe(sender: UIButton) {
         
         retrievedRecipes = [];
+         self.tableView.reloadData()
         
         var words :[String];
         if let phrase = textField.text{
@@ -65,9 +66,8 @@ class SearchTableViewController: UITableViewController {
             //check if the person typed ingredients
             for word in words{
                 let query = PFQuery(className:"Recipe")
-                query.whereKey("ingredients", equalTo: word)
-                //query.whereKey("ingredients", containsString: word)
-                //query.whereKey("ingredients",containedIn: query2)
+                //query.whereKey("ingredients", equalTo: word)
+                query.whereKey("ingredientsString", containsString: word)
                 query.findObjectsInBackgroundWithBlock{
                     (objects: [PFObject]?, error:NSError?) -> Void in
                     if error == nil{
@@ -182,7 +182,7 @@ class SearchTableViewController: UITableViewController {
     
     
     
-    let stopwords = ["a","about","above","after","before","the","I", "me","of","all","an", "and","any","are","is","as","at","be","by","do","does","have","into","in","on","at","isn't","aren't", "no","not","only","or","and","some","to","what","where","who","which","why","with", "under"];
+    let stopwords = ["a","about","above","after","before","the","I", "me","of","all","an", "and","any","are","is","as","at","be","by","do","does","have","into","in","on","at","isn't","aren't", "no","not","only","or","and","some","to","what","where","who","which","why","with", "under", " ", ""];
     
     func removeStopwords(phrase :String) -> [String]{
         var retorno = [String]()
