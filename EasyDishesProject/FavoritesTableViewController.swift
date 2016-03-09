@@ -20,6 +20,7 @@ class FavoritesTableViewController: UITableViewController {
         favoriteRecipesIds = currentUser!["favorites"] as! [String]
         let query = PFQuery(className:"Recipe")
         query.whereKey("objectId",containedIn: favoriteRecipesIds)
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error:NSError?) -> Void in
             if error == nil{

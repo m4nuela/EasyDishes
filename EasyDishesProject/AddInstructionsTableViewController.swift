@@ -18,10 +18,12 @@ class AddInstructionsTableViewController: UITableViewController {
     
     
     @IBAction func onAddNewInstruction(sender: UIButton) {
-        globalInstructions.append(txtNewInstruction.text!)
+        if (txtNewInstruction.text! != ""){
+            globalInstructions.append(txtNewInstruction.text!)
         
-        txtInstructionList.text = txtInstructionList.text + "\(globalInstructions.count)" + ". " + txtNewInstruction.text! + "\n"
+            txtInstructionList.text = txtInstructionList.text + "\(globalInstructions.count)" + ". " + txtNewInstruction.text! + "\n"
             txtNewInstruction.text = ""
+        }
     }
     
     @IBAction func onClearInstructionsList(sender: UIButton) {
@@ -43,7 +45,7 @@ class AddInstructionsTableViewController: UITableViewController {
 
         if(globalInstructions.count != 0){
             for i in 0...globalInstructions.count-1{
-                txtInstructionList.text = txtInstructionList.text + globalInstructions[i] + "\n"
+                txtInstructionList.text = txtInstructionList.text + "\(i+1)" + ". " + globalInstructions[i] + "\n"
             }
         }
         

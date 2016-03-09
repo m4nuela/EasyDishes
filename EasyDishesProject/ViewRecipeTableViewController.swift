@@ -77,6 +77,7 @@ class ViewRecipeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.btnFavorite.hidden = true
     
         let query = PFQuery(className:"Recipe")
         query.getObjectInBackgroundWithId(globalRecipeId) {
@@ -96,6 +97,11 @@ class ViewRecipeTableViewController: UITableViewController {
                     }
                 }
                 self.authorId = recipe["userId"] as! String
+                
+                if (self.authorId != userId){
+                    self.btnFavorite.hidden = false
+                }
+                
                 do{
                     try self.userAuthor = PFQuery.getUserObjectWithId(self.authorId)
                 }catch _ {}

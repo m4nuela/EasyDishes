@@ -17,6 +17,7 @@ class HomeTableViewController: UITableViewController {
     
     func getRecipes(){
         let query = PFQuery(className:"Recipe")
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error:NSError?) -> Void in
             if error == nil{

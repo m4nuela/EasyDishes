@@ -13,7 +13,7 @@ class ImagePreviewViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgPhoto: UIImageView!
     
     @IBAction func pinchRecognizer(sender: UIPinchGestureRecognizer) {
-        print("pinched!!!!")
+        
         
         if let view = sender.view {
             view.transform = CGAffineTransformScale(view.transform,

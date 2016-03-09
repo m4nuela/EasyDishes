@@ -74,7 +74,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         recipeObject["name"] = txtName.text
         
         let image = imgPhoto.image
-        let data = UIImagePNGRepresentation(image!)
+        let data = UIImageJPEGRepresentation(image!,0.25)
         //print(data?.length)
         if (data?.length > 10000000){
             title = "Error"
@@ -110,13 +110,14 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
             if(success){
                 title = "Success"
                 message = "Your Recipe has been created!"
-                /*
+                
                 globalName = ""
                 globalTime = ""
                 globalPortions = ""
                 globalIngredients = [String]()
                 globalInstructions = [String]()
-                */
+                globalImagePhoto = UIImage(named: "chocolate_cookies");
+
             }else{
                 title = "Error"
                 message = "Your Recipe has not been created!"

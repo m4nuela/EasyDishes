@@ -17,7 +17,8 @@ class SearchTableViewController: UITableViewController {
 
     @IBOutlet weak var textField: UITextField!
     
-    @IBAction func search(sender: UIBarButtonItem) {
+    
+    @IBAction func searchRecipe(sender: UIButton) {
         
         retrievedRecipes = [];
         
@@ -50,6 +51,7 @@ class SearchTableViewController: UITableViewController {
                     (objects: [PFObject]?, error:NSError?) -> Void in
                     if error == nil{
                         self.retrievedRecipes = Array(Set(self.retrievedRecipes + objects!));
+                        
                         self.tableView.reloadData()
                     }else{
                         print("1")
@@ -64,11 +66,13 @@ class SearchTableViewController: UITableViewController {
             for word in words{
                 let query = PFQuery(className:"Recipe")
                 query.whereKey("ingredients", equalTo: word)
+                //query.whereKey("ingredients", containsString: word)
                 //query.whereKey("ingredients",containedIn: query2)
                 query.findObjectsInBackgroundWithBlock{
                     (objects: [PFObject]?, error:NSError?) -> Void in
                     if error == nil{
                         self.retrievedRecipes = Array(Set(self.retrievedRecipes + objects!));
+                        
                         self.tableView.reloadData()
                     }else{
                         print("2")
@@ -87,8 +91,10 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "search", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "searchCell")
+
+        
+//        let nib = UINib(nibName: "search", bundle: nil)
+//        tableView.registerNib(nib, forCellReuseIdentifier: "searchCell")
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -123,13 +129,44 @@ class SearchTableViewController: UITableViewController {
         switch(indexPath.row){
         
         default:
+            
+
+        
             if(indexPath.row%2==0){
                 cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) as UITableViewCell
                 cell.textLabel!.text = retrievedRecipes[indexPath.row]["name"] as? String
+                
+                
+                if let image = retrievedRecipes[indexPath.row]["img"] as? PFFile{
+                    image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                        if (error == nil) {
+                            cell.imageView?.image = UIImage(data:imageData!)
+                        }else{
+                            cell.imageView?.image = UIImage(named: "image");
+                        }
+                        tableView.reloadData();
+                    }
+                }
+
+                
                 return cell
             }else{
                 cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
                 cell.textLabel!.text = retrievedRecipes[indexPath.row]["name"] as? String
+                
+                
+                if let image = retrievedRecipes[indexPath.row]["img"] as? PFFile{
+                    image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                        if (error == nil) {
+                            cell.imageView?.image = UIImage(data:imageData!)
+                        }else{
+                            cell.imageView?.image = UIImage(named: "image");
+                        }
+                        tableView.reloadData();
+                    }
+                }
+
+                
                 return cell
             }
         }

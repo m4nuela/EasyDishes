@@ -22,9 +22,11 @@ class AddIngredientsTableViewController: UITableViewController {
     }
     
     @IBAction func onAddIngredient(sender: UIButton) {
-        globalIngredients.append(txtNewIngredient.text!)
-        txtIngredientsList.text = txtIngredientsList.text + ". " + globalIngredients.last! + "\n"
+        if (txtNewIngredient.text! != ""){
+            globalIngredients.append(txtNewIngredient.text!)
+            txtIngredientsList.text = txtIngredientsList.text + ". " + globalIngredients.last! + "\n"
             txtNewIngredient.text = ""
+        }
     }
     
     @IBAction func onSaveIngredientsList(sender: UIButton) {
@@ -41,7 +43,7 @@ class AddIngredientsTableViewController: UITableViewController {
         
         if(globalIngredients.count != 0){
             for i in 0...globalIngredients.count-1{
-                txtIngredientsList.text = txtIngredientsList.text + globalIngredients[i] + "\n"
+                txtIngredientsList.text = txtIngredientsList.text + ". " + globalIngredients[i] + "\n"
             }
         }
         
