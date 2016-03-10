@@ -94,7 +94,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         recipeObject["time"] = txtTime.text
         recipeObject["portions"] = txtPortions.text
         recipeObject["ingredients"] = globalIngredients
-        recipeObject["ingredientsString"] = globalIngredientsString
+        recipeObject["ingredientsString"] = globalIngredientsString.lowercaseString
         recipeObject["instructions"] = globalInstructions
         
         recipeObject["userId"] = globalUserName
