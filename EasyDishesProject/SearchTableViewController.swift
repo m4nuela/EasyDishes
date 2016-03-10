@@ -90,18 +90,7 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-//        let nib = UINib(nibName: "search", bundle: nil)
-//        tableView.registerNib(nib, forCellReuseIdentifier: "searchCell")
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,8 +118,6 @@ class SearchTableViewController: UITableViewController {
         switch(indexPath.row){
         
         default:
-            
-
         
             if(indexPath.row%2==0){
                 cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) as UITableViewCell
@@ -147,7 +134,6 @@ class SearchTableViewController: UITableViewController {
                         tableView.reloadData();
                     }
                 }
-
                 
                 return cell
             }else{
@@ -165,19 +151,9 @@ class SearchTableViewController: UITableViewController {
                         tableView.reloadData();
                     }
                 }
-
-                
                 return cell
             }
         }
-        
-        
-        
-        
-
-        // Configure the cell...
-
-        //return cell
     }
     
     
@@ -197,6 +173,13 @@ class SearchTableViewController: UITableViewController {
         return retorno
     }
 
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Row \(indexPath.row) selected")
+        if(retrievedRecipes.count != 0){
+            globalRecipeId = retrievedRecipes[indexPath.row].objectId!
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
 }

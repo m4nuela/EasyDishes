@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-var userId:String?
+var globalUserName:String?
 
 class LoginViewController: UIViewController {
 
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(txtEmail.text!, password:txtPassword.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                userId = user?.username
+                globalUserName = user?.username
                 self.performSegueWithIdentifier("fromLoginToHome", sender: self)
             } else {
                 
@@ -53,45 +53,6 @@ class LoginViewController: UIViewController {
                     animated: true, completion: nil)
             }
         }
-        
-        /*
-        let query = PFQuery(className:"User")
-        query.whereKey("email", equalTo:txtEmail.text!)
-        query.whereKey("password", equalTo:txtPassword.text!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if(error == nil){
-                if let result = objects {
-                    if(!result.isEmpty){
-                        self.performSegueWithIdentifier("fromLoginToHome", sender: self)
-                    }else{
-                        let title = "Error"
-                        let message = "The Email or Password fields are wrong."
-                        let alertController = UIAlertController(
-                            title: title, message: message,
-                            preferredStyle: .Alert)
-                        let okayAction = UIAlertAction(title: "Okay",
-                            style: .Default, handler: nil)
-                        alertController.addAction(okayAction)
-                        self.presentViewController(alertController,
-                            animated: true, completion: nil)
-                        
-                    }
-                }
-            }else{
-                var message = "Something happened =("
-                let title = "Error"
-                let alertController = UIAlertController(
-                    title: title, message: message,
-                    preferredStyle: .Alert)
-                let okayAction = UIAlertAction(title: "Okay",
-                    style: .Default, handler: nil)
-                alertController.addAction(okayAction)
-                self.presentViewController(alertController,
-                    animated: true, completion: nil)
-            }
-        }*/
     }
     
     @IBAction func dismissTextField(sender: UITextField) {
@@ -112,15 +73,4 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -82,7 +82,7 @@ class CreateAccountViewController: UIViewController {
             if (title == "Success"){
                 okayAction = UIAlertAction(title: "Okay",style: .Default) { _ in
                     
-                     userId = self.txtUsername.text!
+                     globalUserName = self.txtUsername.text!
                         self.performSegueWithIdentifier("fromCreateAccountToHome", sender: self)
                 }
             }else{

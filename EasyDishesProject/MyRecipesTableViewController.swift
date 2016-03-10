@@ -15,14 +15,13 @@ class MyRecipesTableViewController: UITableViewController {
     
     func getMyRecipes(){
         let query = PFQuery(className:"Recipe")
-        query.whereKey("userId",equalTo:userId!)
+        query.whereKey("userId",equalTo:globalUserName!)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error:NSError?) -> Void in
             if error == nil{
                 self.myRecipesList = objects!;
                 self.tableView.reloadData()
-                //print(userId!)
             }
         }
     }

@@ -12,7 +12,7 @@ import Parse
 var globalName = ""
 var globalTime = ""
 var globalPortions = ""
-var globalImagePhoto = UIImage(named: "chocolate_cookies");
+var globalImagePhoto = UIImage(named: "food3");
 
 class NewRecipeTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -26,7 +26,6 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var txtTime: UITextField!
     @IBOutlet weak var txtPortions: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imagePicker = UIImagePickerController()
     
@@ -98,10 +97,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         recipeObject["ingredientsString"] = globalIngredientsString
         recipeObject["instructions"] = globalInstructions
         
-        recipeObject["userId"] = userId
-        
-        activityIndicator.hidden = false
-        activityIndicator.startAnimating()
+        recipeObject["userId"] = globalUserName
         
         recipeObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
@@ -135,9 +131,6 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
             alertController.addAction(okayAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
-        
-        activityIndicator.stopAnimating()
-        activityIndicator.hidden = true
         }
     }
     
@@ -150,8 +143,6 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        activityIndicator.hidden = true
         
         txtName.text = globalName
         txtTime.text = globalTime

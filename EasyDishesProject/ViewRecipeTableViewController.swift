@@ -20,8 +20,7 @@ var globalImagePreview = UIImage()
 class ViewRecipeTableViewController: UITableViewController {
     
     var recipe:PFObject?
-    var userAuthor:PFUser?
-    var authorId:String = ""
+    var authorName = ""
     var ingredientsList = [String]()
     var instructionsList = [String]()
     var foodImage:UIImage?
@@ -96,15 +95,11 @@ class ViewRecipeTableViewController: UITableViewController {
                         }
                     }
                 }
-                self.authorId = recipe["userId"] as! String
+                self.authorName = recipe["userId"] as! String
                 
-                if (self.authorId != userId){
+                if (self.authorName != globalUserName){
                     self.btnFavorite.hidden = false
                 }
-                
-                do{
-                    try self.userAuthor = PFQuery.getUserObjectWithId(self.authorId)
-                }catch _ {}
             }
         }
         
@@ -183,7 +178,7 @@ class ViewRecipeTableViewController: UITableViewController {
 
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier("authorCell", forIndexPath: indexPath)
-            cell.textLabel?.text = userAuthor?.username
+            cell.textLabel?.text = "by " + authorName
             return cell
 
         case 3:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -302,15 +302,10 @@
                                                         </mask>
                                                     </variation>
                                                 </textField>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LKa-zy-Hik">
-                                                    <rect key="frame" x="290" y="31.5" width="20" height="20"/>
-                                                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wo8-1I-OW2" firstAttribute="centerX" secondItem="sky-OH-RB3" secondAttribute="centerX" id="48L-jy-DhC"/>
                                                 <constraint firstItem="vR6-dL-KQ1" firstAttribute="top" secondItem="sky-OH-RB3" secondAttribute="topMargin" id="B3i-mc-5vh"/>
-                                                <constraint firstItem="LKa-zy-Hik" firstAttribute="centerX" secondItem="sky-OH-RB3" secondAttribute="centerX" id="ICS-bs-ema"/>
                                                 <constraint firstItem="4ha-Gk-sqQ" firstAttribute="top" secondItem="vR6-dL-KQ1" secondAttribute="bottom" constant="5" id="KNv-HK-I6g"/>
                                                 <constraint firstItem="24A-9i-Ts4" firstAttribute="leading" secondItem="wo8-1I-OW2" secondAttribute="trailing" constant="35" id="P90-mF-jri"/>
                                                 <constraint firstItem="4ha-Gk-sqQ" firstAttribute="centerX" secondItem="vR6-dL-KQ1" secondAttribute="centerX" id="Ptt-gq-lYy"/>
@@ -319,7 +314,6 @@
                                                 <constraint firstItem="24A-9i-Ts4" firstAttribute="top" secondItem="sky-OH-RB3" secondAttribute="topMargin" id="uJC-6S-ZNT"/>
                                                 <constraint firstItem="wo8-1I-OW2" firstAttribute="top" secondItem="sky-OH-RB3" secondAttribute="topMargin" id="w7O-w2-9FK"/>
                                                 <constraint firstItem="wo8-1I-OW2" firstAttribute="leading" secondItem="vR6-dL-KQ1" secondAttribute="trailing" constant="35" id="yC8-Sh-Fx2"/>
-                                                <constraint firstItem="LKa-zy-Hik" firstAttribute="centerY" secondItem="sky-OH-RB3" secondAttribute="centerY" id="zGA-vW-fOx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -423,7 +417,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Recipe" id="zbW-t2-hS3"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="LKa-zy-Hik" id="mTq-BO-Jkp"/>
                         <outlet property="imgPhoto" destination="taF-sE-SwY" id="9aa-ip-22y"/>
                         <outlet property="txtName" destination="rJH-mC-SGn" id="wJW-B4-2CF"/>
                         <outlet property="txtPortions" destination="L0U-Rk-Kj2" id="CVV-Da-0NV"/>
@@ -475,7 +468,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glb-HM-P7c">
                                             <rect key="frame" x="15" y="0.0" width="570" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -493,7 +486,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="by author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cd3-5V-jiM">
                                             <rect key="frame" x="15" y="0.0" width="570" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -688,6 +681,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="HsT-eo-1W8" kind="show" id="wOY-s1-zCQ"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basic" textLabel="hK1-0b-z7i" imageView="LDO-e9-55r" rowHeight="75" style="IBUITableViewCellStyleDefault" id="W6s-JX-5or">
                                 <rect key="frame" x="0.0" y="167" width="600" height="75"/>
@@ -709,6 +705,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HsT-eo-1W8" kind="show" id="XzK-TY-IH6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1001,6 +1000,9 @@
                                                             <exclude reference="5g8-am-RHZ"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="onEditingChanged:" destination="xiY-Wr-jYu" eventType="editingChanged" id="NdX-gR-oxU"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pac-8L-sUa">
                                                     <rect key="frame" x="193" y="26" width="0.0" height="0.0"/>
@@ -1452,7 +1454,7 @@
         <image name="recipe" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wOY-s1-zCQ"/>
         <segue reference="hEg-Yk-BmD"/>
-        <segue reference="z58-fI-m8W"/>
     </inferredMetricsTieBreakers>
 </document>

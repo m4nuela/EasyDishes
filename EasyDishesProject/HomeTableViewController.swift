@@ -23,7 +23,6 @@ class HomeTableViewController: UITableViewController {
             if error == nil{
                 self.recipesList = objects!;
                 self.tableView.reloadData()
-                //print(userId!)
             }
         }
     }
@@ -62,14 +61,7 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
-    
-    
-//    let image = UIImage(named: "chocolate_cookies")
-//    let data = UIImagePNGRepresentation(image!)
-//    let file = PFFile(name: "image", data: data!)
-//    recipeObject["img"] = file
-    
-    
+  
         cell.textLabel?.text = recipesList[indexPath.row]["name"] as? String
         if let image = recipesList[indexPath.row]["img"] as? PFFile{
             image.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
