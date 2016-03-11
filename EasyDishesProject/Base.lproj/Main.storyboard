@@ -158,7 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-OV-OMH">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-OV-OMH">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -456,7 +456,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJv-wr-gHN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="pJv-wr-gHN">
                                             <rect key="frame" x="263" y="9.5" width="74" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="71" id="d4P-4j-5dc"/>
