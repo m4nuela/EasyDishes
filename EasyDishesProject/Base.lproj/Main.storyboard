@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZAY-bV-Cnp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -227,7 +227,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chocolate_cookies" translatesAutoresizingMaskIntoConstraints="NO" id="taF-sE-SwY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="taF-sE-SwY">
                                                     <rect key="frame" x="225" y="17" width="150" height="150"/>
                                                     <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                     <gestureRecognizers/>
@@ -1448,7 +1448,7 @@
         <image name="Home" width="25" height="25"/>
         <image name="Plus Math-53" width="52" height="52"/>
         <image name="Search Filled-51" width="50" height="50"/>
-        <image name="chocolate_cookies" width="347" height="346"/>
+        <image name="food3" width="512" height="512"/>
         <image name="image" width="50" height="50"/>
         <image name="myRecipes" width="25" height="25"/>
         <image name="recipe" width="40" height="40"/>
