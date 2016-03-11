@@ -27,7 +27,6 @@ class SearchTableViewController: UITableViewController {
         if let phrase = textField.text{
             words = removeStopwords(phrase)
             
-            
             // check if the person typed the title of the recipe
             let query = PFQuery(className:"Recipe")
             query.whereKey("name", equalTo : phrase)
@@ -61,8 +60,6 @@ class SearchTableViewController: UITableViewController {
                 }
             }
             
-            
-            
             //check if the person typed ingredients
             for word in words{
                 let query = PFQuery(className:"Recipe")
@@ -81,16 +78,14 @@ class SearchTableViewController: UITableViewController {
                     }
                 }
             }
-            
-            
         }
-
     }
     
+    @IBAction func onDidEndOnExitSearch(sender: UITextField) {        sender.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,8 +151,6 @@ class SearchTableViewController: UITableViewController {
         }
     }
     
-    
-    
     let stopwords = ["a","about","above","after","before","the","I", "me","of","all","an", "and","any","are","is","as","at","be","by","do","does","have","into","in","on","at","isn't","aren't", "no","not","only","or","and","some","to","what","where","who","which","why","with", "under", " ", ""];
     
     func removeStopwords(phrase :String) -> [String]{
@@ -169,7 +162,6 @@ class SearchTableViewController: UITableViewController {
                 retorno.append(word)
             }
         }
-        
         return retorno
     }
 

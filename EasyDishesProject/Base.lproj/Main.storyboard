@@ -52,6 +52,9 @@
                                                             <exclude reference="fmt-f4-F98"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="onDidEndOnExitNewIngredient:" destination="joL-Jc-tLz" eventType="editingDidEndOnExit" id="cpT-ga-DPQ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -105,11 +108,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qym-nd-iG2">
-                                                    <rect key="frame" x="225" y="10" width="150" height="40"/>
+                                                    <rect key="frame" x="184" y="10" width="232" height="40"/>
                                                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="0Qp-De-R08"/>
-                                                        <constraint firstAttribute="width" constant="150" id="xXS-yc-oyS"/>
+                                                        <constraint firstAttribute="width" constant="232" id="xXS-yc-oyS"/>
                                                     </constraints>
                                                     <state key="normal" title="Save">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,6 +215,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onDidEndOnExistName:" destination="DNM-Yt-oBG" eventType="editingDidEndOnExit" id="5ub-yl-TZz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -250,7 +256,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Gk-sqQ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="30 min" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Gk-sqQ">
                                                     <rect key="frame" x="202" y="33" width="80" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="GNY-7h-SyS"/>
@@ -264,6 +270,9 @@
                                                             <exclude reference="fD9-S6-YoX"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="onDidEndOnExitTime:" destination="DNM-Yt-oBG" eventType="editingDidEndOnExit" id="RQH-BJ-19X"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR6-dL-KQ1">
                                                     <rect key="frame" x="222" y="8" width="40" height="20.5"/>
@@ -301,6 +310,9 @@
                                                             <exclude reference="gYg-MB-W9Y"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="onDidEndOnExitPortions:" destination="DNM-Yt-oBG" eventType="editingDidEndOnExit" id="had-3p-YOz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -668,14 +680,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L4k-J8-n7F">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="VQc-7h-BwY">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="VQc-7h-BwY">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -693,14 +705,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hK1-0b-z7i">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="LDO-e9-55r">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="LDO-e9-55r">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -723,6 +735,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="onDidEndOnExitSearch:" destination="Xlq-o1-PCS" eventType="editingDidEndOnExit" id="gRk-lO-MOS"/>
+                            </connections>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mva-gH-ajz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Do9-c3-JbR">
@@ -1001,6 +1016,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
+                                                        <action selector="onDidEndOnExit:" destination="xiY-Wr-jYu" eventType="editingDidEndOnExit" id="Pwl-2E-P5w"/>
                                                         <action selector="onEditingChanged:" destination="xiY-Wr-jYu" eventType="editingChanged" id="NdX-gR-oxU"/>
                                                     </connections>
                                                 </textField>
@@ -1068,11 +1084,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-ai-yh6">
-                                                    <rect key="frame" x="225" y="10" width="150" height="40"/>
+                                                    <rect key="frame" x="184" y="10" width="232" height="40"/>
                                                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="0i8-TU-TeK"/>
-                                                        <constraint firstAttribute="width" constant="150" id="UKU-oY-79J"/>
+                                                        <constraint firstAttribute="width" constant="232" id="UKU-oY-79J"/>
                                                     </constraints>
                                                     <state key="normal" title="Save">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1123,14 +1139,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aqf-xJ-7ns">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="C1o-nQ-eZh">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="C1o-nQ-eZh">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1148,14 +1164,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fUe-qq-evb">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="1LP-VS-v9v">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="1LP-VS-v9v">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1199,14 +1215,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3K6-ER-hVo">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="PI7-Zo-ccD">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="PI7-Zo-ccD">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1223,14 +1239,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kgu-XJ-mdg">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="H7L-24-Deh">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="H7L-24-Deh">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1275,14 +1291,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6kA-fW-OFf">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="8sS-6G-4tU">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="8sS-6G-4tU">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1299,14 +1315,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j4X-aZ-amI">
-                                            <rect key="frame" x="80" y="0.0" width="505" height="75"/>
+                                            <rect key="frame" x="105" y="0.0" width="480" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="image" id="IZK-UQ-CfR">
-                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="food3" id="IZK-UQ-CfR">
+                                            <rect key="frame" x="15" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1449,12 +1465,11 @@
         <image name="Plus Math-53" width="52" height="52"/>
         <image name="Search Filled-51" width="50" height="50"/>
         <image name="food3" width="512" height="512"/>
-        <image name="image" width="50" height="50"/>
         <image name="myRecipes" width="25" height="25"/>
         <image name="recipe" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wOY-s1-zCQ"/>
         <segue reference="hEg-Yk-BmD"/>
+        <segue reference="uq5-vV-1qK"/>
     </inferredMetricsTieBreakers>
 </document>

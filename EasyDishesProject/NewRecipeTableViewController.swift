@@ -133,6 +133,18 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         }
         }
     }
+
+    @IBAction func onDidEndOnExistName(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func onDidEndOnExitPortions(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func onDidEndOnExitTime(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue,   sender: AnyObject?) {
         globalName = txtName.text!

@@ -40,6 +40,9 @@ class AddIngredientsTableViewController: UITableViewController {
         //self.performSegueWithIdentifier("fromIngredientsToNewRecipe", sender: self)
         navigationController!.popViewControllerAnimated(true)
     }
+    @IBAction func onDidEndOnExitNewIngredient(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

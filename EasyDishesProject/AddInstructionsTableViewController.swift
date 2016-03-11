@@ -42,6 +42,10 @@ class AddInstructionsTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func onDidEndOnExit(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
