@@ -256,7 +256,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="30 min" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Gk-sqQ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Gk-sqQ">
                                                     <rect key="frame" x="202" y="33" width="80" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="GNY-7h-SyS"/>
@@ -1469,7 +1469,7 @@
         <image name="recipe" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hEg-Yk-BmD"/>
+        <segue reference="Fsv-lN-jsY"/>
         <segue reference="uq5-vV-1qK"/>
     </inferredMetricsTieBreakers>
 </document>
