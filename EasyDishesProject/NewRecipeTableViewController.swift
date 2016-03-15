@@ -35,7 +35,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         let checkTime = txtTime.text!.isEmpty
         let checkPortions = txtPortions.text!.isEmpty
         let checkIngredients = globalIngredients.isEmpty
-        let checkInstructions = globalIngredients.isEmpty
+        let checkInstructions = globalInstructions.isEmpty
         
         if(checkName || checkTime || checkPortions){
             let title = "Warning"
@@ -74,7 +74,6 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
         
         let image = imgPhoto.image
         let data = UIImageJPEGRepresentation(image!,0.25)
-        //print(data?.length)
         if (data?.length > 10000000){
             title = "Error"
             let message = "The Image size cannot be larger than 10MB"
@@ -114,7 +113,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
                 globalIngredientsString = ""
                 globalIngredients = [String]()
                 globalInstructions = [String]()
-                globalImagePhoto = UIImage(named: "chocolate_cookies");
+                globalImagePhoto = UIImage(named: "food3");
 
             }else{
                 title = "Error"
@@ -125,7 +124,6 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
                 title: title, message: message,
                 preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default) { _ in
-                //self.performSegueWithIdentifier("fromNewRecipeToMyRecipes", sender: self)
                 self.navigationController!.popViewControllerAnimated(true)
             }
             alertController.addAction(okayAction)
@@ -189,9 +187,7 @@ class NewRecipeTableViewController: UITableViewController, UINavigationControlle
     
     func imageTapped(img: AnyObject)
     {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
-            print("Button capture")
-            
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){            
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
             imagePicker.allowsEditing = false

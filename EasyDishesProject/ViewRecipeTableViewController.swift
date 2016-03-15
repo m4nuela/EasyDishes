@@ -9,11 +9,6 @@
 import UIKit
 import Parse
 
-/*
-var cookiesIngredients = [". 1 cup of softened butter", ". 1 cup of brown sugar", ". 1/3 of castor sugar", ". 2 eggs", ". 2 tsp of vanilla extract", ". 1 cup of flour", ". 1 tsp of baking powder", ". 1 tsp of baking soda", ". 1 cup of chocolate chips"]
-
-var cookiesInstructions = ["1 - Beat butter and sugar till light and fluffy. Add in the eggs one at a time. Add vanilla.", "2 - Whisk together flour, baking powder and baking soda. Fold this mixture into the wet mixture. The dough will be very stiff. Add in the chocolate chips and fold.", "3 - Take a scoop of batter and roll into a ball. Flatten a little and place on baking sheet lined with parchment paper. Place the balls at a distance from each other. Bake and flatten the cookies a little if they inflate while baking.", "4 - Let them cool and enjoy."]
-*/
 
 var globalImagePreview = UIImage()
 
@@ -210,7 +205,6 @@ class ViewRecipeTableViewController: UITableViewController {
             }
             return cell
         }
-        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -222,5 +216,4 @@ class ViewRecipeTableViewController: UITableViewController {
             return 40
         }
     }
-   
 }

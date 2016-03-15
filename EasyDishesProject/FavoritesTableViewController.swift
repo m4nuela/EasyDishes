@@ -28,9 +28,7 @@ class FavoritesTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
     }
-
     
     override func viewWillAppear(animated: Bool) {
         getFavoriteRecipes();
@@ -44,15 +42,12 @@ class FavoritesTableViewController: UITableViewController {
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        //tableView.delegate = self;
-        //tableView.dataSource = self;
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -82,18 +77,14 @@ class FavoritesTableViewController: UITableViewController {
                 tableView.reloadData();
             }
         }
-
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print("Row \(indexPath.row) selected")
         if(favoriteRecipes.count != 0){
             globalRecipeId = favoriteRecipes[indexPath.row].objectId!
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-    
 }

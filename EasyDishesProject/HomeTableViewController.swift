@@ -79,12 +79,10 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Row \(indexPath.row) selected")
         if(recipesList.count != 0){
             globalRecipeId = recipesList[indexPath.row].objectId!
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
 }

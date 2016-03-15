@@ -33,11 +33,6 @@ class AddIngredientsTableViewController: UITableViewController {
     }
     
     @IBAction func onSaveIngredientsList(sender: UIButton) {
-        /*if let from = presentingViewController as? AddIngredientsTableViewController {
-            from.ingredients = ingredients
-    
-        }*/
-        //self.performSegueWithIdentifier("fromIngredientsToNewRecipe", sender: self)
         navigationController!.popViewControllerAnimated(true)
     }
     @IBAction func onDidEndOnExitNewIngredient(sender: UITextField) {

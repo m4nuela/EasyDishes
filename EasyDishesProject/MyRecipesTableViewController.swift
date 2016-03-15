@@ -42,14 +42,6 @@ class MyRecipesTableViewController: UITableViewController {
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
          
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-//        let nib = UINib(nibName: "myCell", bundle: nil);
-//        tableView.registerNib(nib, forCellReuseIdentifier: "MyRecipes");
-//        
-//        
-//        let nib2 = UINib(nibName: "myCell2", bundle: nil);
-//        tableView.registerNib(nib2, forCellReuseIdentifier: "MyRecipes2");
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,38 +57,12 @@ class MyRecipesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
-//        if(indexPath.row%2==0){
-//            let cell1 :myCellTableViewCell;
-//            cell1 = tableView.dequeueReusableCellWithIdentifier("MyRecipes", forIndexPath: indexPath) as! myCellTableViewCell
-//            cell1.label?.text = favoriteRecipes[indexPath.row];
-//            cell1.img.image = UIImage(named:"image.png");
-//            
-//            return cell1;
-//            
-//            //cell.imgCarName.image = UIImage(named: tableData[indexPath.row])
-//            
-//            
-//        }else{
-//            let cell2 :myCell2TableViewCell
-//            cell2 = tableView.dequeueReusableCellWithIdentifier("MyRecipes2", forIndexPath: indexPath) as! myCell2TableViewCell
-//            cell2.label?.text = favoriteRecipes[indexPath.row];
-//            cell2.img.image = UIImage(named:"image");
-//            return cell2;
-//        }
-        
-        
-        
         var cell :UITableViewCell;
         if(indexPath.row%2==0){
             cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) as UITableViewCell
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("basic2", forIndexPath: indexPath) as UITableViewCell
         }
-        
-        
-        
         
         cell.textLabel?.text = myRecipesList[indexPath.row]["name"] as? String
         
@@ -115,14 +81,11 @@ class MyRecipesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print("Row \(indexPath.row) selected")
         if(myRecipesList.count != 0){
             globalRecipeId = myRecipesList[indexPath.row].objectId!
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
-    
     
     func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
@@ -135,7 +98,6 @@ class MyRecipesTableViewController: UITableViewController {
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:nil);
                 let forceAction = UIAlertAction(title: "Yes", style: .Destructive){ _ in
                     
-                    //remover do parse
                     self.myRecipesList[indexPath.row].deleteInBackground()
                     self.getMyRecipes()
                     self.tableView.reloadData()
@@ -144,7 +106,6 @@ class MyRecipesTableViewController: UITableViewController {
                     
                     alertController.addAction(cancelAction);
                     alertController.addAction(forceAction);
-                    
                     
                     presentViewController(alertController, animated: true,completion: nil);
             }

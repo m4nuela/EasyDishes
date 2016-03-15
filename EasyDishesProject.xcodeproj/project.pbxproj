@@ -510,7 +510,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)_Nicolas",
 					"$(PROJECT_DIR)/EasyDishesProject",
 				);
 				INFOPLIST_FILE = EasyDishesProject/Info.plist;
@@ -526,7 +525,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)_Nicolas",
 					"$(PROJECT_DIR)/EasyDishesProject",
 				);
 				INFOPLIST_FILE = EasyDishesProject/Info.plist;

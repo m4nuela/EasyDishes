@@ -643,7 +643,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Srq-er-2tg">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="hpv-vA-pSq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="hpv-vA-pSq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ds2-lr-dRa">
                                 <rect key="frame" x="555" y="9" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -739,7 +739,7 @@
                                 <action selector="onDidEndOnExitSearch:" destination="Xlq-o1-PCS" eventType="editingDidEndOnExit" id="gRk-lO-MOS"/>
                             </connections>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="mva-gH-ajz">
+                        <barButtonItem key="rightBarButtonItem" id="mva-gH-ajz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Do9-c3-JbR">
                                 <rect key="frame" x="555" y="9" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1344,7 +1344,7 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" style="plain" id="4Kw-Af-E91">
+                            <barButtonItem title="Item" id="4Kw-Af-E91">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pKS-38-hWG">
                                     <rect key="frame" x="555" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1354,7 +1354,7 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="Ll0-Ym-U2x">
+                            <barButtonItem id="Ll0-Ym-U2x">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mwt-UI-Axy">
                                     <rect key="frame" x="522" y="9" width="25" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
